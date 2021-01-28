@@ -1,5 +1,5 @@
 # scrcpyui
-Small project to provide UI access for the scrcpy tool in macOS
+Small project :to provide UI access to the [scrcpy][scrcpy-url] tool in macOS
 
 ![logo](https://github.com/pedrofraca/scrcpyui/blob/main/art/logo_small.png?raw=true)
 
@@ -16,3 +16,5 @@ Once installed you just need to open it from Applications folder (you have to ac
 And you'll get a status bar icon where you can see your devices connected, clicking on them will launch scrcpy
 
 ![screenshot](https://github.com/pedrofraca/scrcpyui/blob/main/art/screenshot.png?raw=true)
+
+[scrcpy]: https://github.com/Genymobile/scrcpy
