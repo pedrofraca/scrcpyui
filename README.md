@@ -4,8 +4,7 @@ Small project :to provide UI access to the [scrcpy](https://github.com/Genymobil
 ![logo](https://github.com/pedrofraca/scrcpyui/blob/main/art/logo_small.png?raw=true)
 
 ## Install
-`brew tap pedrofraca/brew
- brew install scrcpyui`
+`brew tap pedrofraca/brew; brew install scrcpyui`
 
  adb has to be accesible in the path in order to install it:
 
