@@ -23,9 +23,7 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: sersoft-gmbh/xcodebuild-action@v1
-        with:
-          project: scrcpyui.xcodeproj
-          scheme: scrcpy
-          destination: platform=macOS
-          action: test
+    - name: Checkout Project
+      uses: actions/checkout@v1
+    - name: Testing
+      run: xcodebuild -scheme scrcpyuiTests test
