@@ -1,6 +1,8 @@
 # scrcpyui
 Small project :to provide UI access to the [scrcpy](https://github.com/Genymobile/scrcpy) tool in macOS
 
+![CI](https://github.com/pedrofraca/scrcpyui/workflows/CI/badge.svg)
+
 ![logo](https://github.com/pedrofraca/scrcpyui/blob/main/art/logo_small.png?raw=true)
 
 ## Install
