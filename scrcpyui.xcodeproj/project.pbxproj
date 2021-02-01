@@ -10,7 +10,25 @@
 		2176E57E23324F60002C9B6F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2176E57D23324F60002C9B6F /* AppDelegate.swift */; };
 		2176E58023324F62002C9B6F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2176E57F23324F62002C9B6F /* Assets.xcassets */; };
 		2176E58323324F62002C9B6F /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2176E58123324F62002C9B6F /* MainMenu.xib */; };
+		A7E7F4CE25C6B764008426EB /* ScrCpyViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E7F4CD25C6B764008426EB /* ScrCpyViewModelTest.swift */; };
+		A7E7F4D625C6B7A3008426EB /* ScrcpyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E7F4D525C6B7A3008426EB /* ScrcpyViewModel.swift */; };
+		A7E7F4D825C6BA1B008426EB /* CommandLineProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E7F4D725C6BA1B008426EB /* CommandLineProtocol.swift */; };
+		A7E7F4DA25C6BAA3008426EB /* DevicesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E7F4D925C6BAA3008426EB /* DevicesRepository.swift */; };
+		A7E7F4DC25C6BB66008426EB /* DevicesRepositoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E7F4DB25C6BB66008426EB /* DevicesRepositoryTest.swift */; };
+		A7E7F4DE25C6C0A5008426EB /* StatusBarProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E7F4DD25C6C0A5008426EB /* StatusBarProtocol.swift */; };
+		A7E7F4E025C72653008426EB /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E7F4DF25C72653008426EB /* Mocks.swift */; };
+		A7E7F4E225C732AE008426EB /* BashCommandLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E7F4E125C732AE008426EB /* BashCommandLine.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A7E7F4D025C6B764008426EB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2176E57223324F60002C9B6F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2176E57923324F60002C9B6F;
+			remoteInfo = scrcpyui;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		2176E57A23324F60002C9B6F /* scrcpyui.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = scrcpyui.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -19,10 +37,27 @@
 		2176E58223324F62002C9B6F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		2176E58423324F62002C9B6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2176E58523324F62002C9B6F /* scrcpyui.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = scrcpyui.entitlements; sourceTree = "<group>"; };
+		A7E7F4CB25C6B764008426EB /* scrcpyuiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = scrcpyuiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7E7F4CD25C6B764008426EB /* ScrCpyViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrCpyViewModelTest.swift; sourceTree = "<group>"; };
+		A7E7F4CF25C6B764008426EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A7E7F4D525C6B7A3008426EB /* ScrcpyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrcpyViewModel.swift; sourceTree = "<group>"; };
+		A7E7F4D725C6BA1B008426EB /* CommandLineProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandLineProtocol.swift; sourceTree = "<group>"; };
+		A7E7F4D925C6BAA3008426EB /* DevicesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesRepository.swift; sourceTree = "<group>"; };
+		A7E7F4DB25C6BB66008426EB /* DevicesRepositoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesRepositoryTest.swift; sourceTree = "<group>"; };
+		A7E7F4DD25C6C0A5008426EB /* StatusBarProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarProtocol.swift; sourceTree = "<group>"; };
+		A7E7F4DF25C72653008426EB /* Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mocks.swift; sourceTree = "<group>"; };
+		A7E7F4E125C732AE008426EB /* BashCommandLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BashCommandLine.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		2176E57723324F60002C9B6F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A7E7F4C825C6B764008426EB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -36,6 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				2176E57C23324F60002C9B6F /* scrcpyui */,
+				A7E7F4CC25C6B764008426EB /* scrcpyuiTests */,
 				2176E57B23324F60002C9B6F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -44,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				2176E57A23324F60002C9B6F /* scrcpyui.app */,
+				A7E7F4CB25C6B764008426EB /* scrcpyuiTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -56,8 +93,24 @@
 				2176E58123324F62002C9B6F /* MainMenu.xib */,
 				2176E58423324F62002C9B6F /* Info.plist */,
 				2176E58523324F62002C9B6F /* scrcpyui.entitlements */,
+				A7E7F4D525C6B7A3008426EB /* ScrcpyViewModel.swift */,
+				A7E7F4D725C6BA1B008426EB /* CommandLineProtocol.swift */,
+				A7E7F4D925C6BAA3008426EB /* DevicesRepository.swift */,
+				A7E7F4DD25C6C0A5008426EB /* StatusBarProtocol.swift */,
+				A7E7F4E125C732AE008426EB /* BashCommandLine.swift */,
 			);
 			path = scrcpyui;
+			sourceTree = "<group>";
+		};
+		A7E7F4CC25C6B764008426EB /* scrcpyuiTests */ = {
+			isa = PBXGroup;
+			children = (
+				A7E7F4CD25C6B764008426EB /* ScrCpyViewModelTest.swift */,
+				A7E7F4CF25C6B764008426EB /* Info.plist */,
+				A7E7F4DB25C6BB66008426EB /* DevicesRepositoryTest.swift */,
+				A7E7F4DF25C72653008426EB /* Mocks.swift */,
+			);
+			path = scrcpyuiTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -80,18 +133,40 @@
 			productReference = 2176E57A23324F60002C9B6F /* scrcpyui.app */;
 			productType = "com.apple.product-type.application";
 		};
+		A7E7F4CA25C6B764008426EB /* scrcpyuiTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A7E7F4D425C6B764008426EB /* Build configuration list for PBXNativeTarget "scrcpyuiTests" */;
+			buildPhases = (
+				A7E7F4C725C6B764008426EB /* Sources */,
+				A7E7F4C825C6B764008426EB /* Frameworks */,
+				A7E7F4C925C6B764008426EB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A7E7F4D125C6B764008426EB /* PBXTargetDependency */,
+			);
+			name = scrcpyuiTests;
+			productName = scrcpyuiTests;
+			productReference = A7E7F4CB25C6B764008426EB /* scrcpyuiTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		2176E57223324F60002C9B6F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1030;
+				LastSwiftUpdateCheck = 1130;
 				LastUpgradeCheck = 1030;
 				ORGANIZATIONNAME = "Fraca, Pedro";
 				TargetAttributes = {
 					2176E57923324F60002C9B6F = {
 						CreatedOnToolsVersion = 10.3;
+					};
+					A7E7F4CA25C6B764008426EB = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = 2176E57923324F60002C9B6F;
 					};
 				};
 			};
@@ -109,6 +184,7 @@
 			projectRoot = "";
 			targets = (
 				2176E57923324F60002C9B6F /* scrcpyui */,
+				A7E7F4CA25C6B764008426EB /* scrcpyuiTests */,
 			);
 		};
 /* End PBXProject section */
@@ -123,6 +199,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A7E7F4C925C6B764008426EB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -130,11 +213,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7E7F4D625C6B7A3008426EB /* ScrcpyViewModel.swift in Sources */,
+				A7E7F4DE25C6C0A5008426EB /* StatusBarProtocol.swift in Sources */,
+				A7E7F4DA25C6BAA3008426EB /* DevicesRepository.swift in Sources */,
+				A7E7F4E225C732AE008426EB /* BashCommandLine.swift in Sources */,
+				A7E7F4D825C6BA1B008426EB /* CommandLineProtocol.swift in Sources */,
 				2176E57E23324F60002C9B6F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A7E7F4C725C6B764008426EB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A7E7F4CE25C6B764008426EB /* ScrCpyViewModelTest.swift in Sources */,
+				A7E7F4DC25C6BB66008426EB /* DevicesRepositoryTest.swift in Sources */,
+				A7E7F4E025C72653008426EB /* Mocks.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A7E7F4D125C6B764008426EB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2176E57923324F60002C9B6F /* scrcpyui */;
+			targetProxy = A7E7F4D025C6B764008426EB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		2176E58123324F62002C9B6F /* MainMenu.xib */ = {
@@ -299,6 +405,44 @@
 			};
 			name = Release;
 		};
+		A7E7F4D225C6B764008426EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = scrcpyuiTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.pedrofraca.scrcpyuiTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/scrcpyui.app/Contents/MacOS/scrcpyui";
+			};
+			name = Debug;
+		};
+		A7E7F4D325C6B764008426EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = scrcpyuiTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.pedrofraca.scrcpyuiTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/scrcpyui.app/Contents/MacOS/scrcpyui";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -316,6 +460,15 @@
 			buildConfigurations = (
 				2176E58923324F62002C9B6F /* Debug */,
 				2176E58A23324F62002C9B6F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A7E7F4D425C6B764008426EB /* Build configuration list for PBXNativeTarget "scrcpyuiTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A7E7F4D225C6B764008426EB /* Debug */,
+				A7E7F4D325C6B764008426EB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

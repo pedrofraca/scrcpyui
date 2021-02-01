@@ -19,93 +19,70 @@
 import Cocoa
 
 @NSApplicationMain
-class AppDelegate: NSObject, NSApplicationDelegate {
-
+class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate, StatusBarProtocol {
+    
 	@IBOutlet weak var window: NSWindow!
 	let statusItem = NSStatusBar.system.statusItem(withLength:NSStatusItem.squareLength)
-
+    var viewModel : ScrCpyViewModel!
+    let menu = NSMenu()
+    
 	func applicationDidFinishLaunching(_ aNotification: Notification) {
+        
 		if let button = statusItem.button {
 			button.image = NSImage(named: "Image")
 			button.target = self
 		}
-        refreshDevices(nil)
+        let commandLine = BashCommandLine()
+        
+        viewModel = ScrCpyViewModel(withDevicesRepo: DevicesRepository(withCommandLine: commandLine), withCommandLine: commandLine, toStatusBar: self)
+        
+        viewModel.refresh()
+        
+        menu.delegate = self
+        statusItem.menu = menu
+
 	}
     
-    func parseDevicesFromAdbOutput(output: String) -> [String] {
-        let devices = output.split(separator: "\n")
-        var result = [String]()
-        if(devices.count>1) {
-            for n in 1...devices.count-1 {
-                result.append(String(output.split(separator: "\n")[n].split(separator: "\t")[0]))
-            }
-        }
-        return result
+    func menuWillOpen(_ menu: NSMenu) {
+        viewModel.refresh()
     }
-	
-    func shell(launchPath: String, arguments: [String], readOutput : Bool) -> String {
-		let task = Process()
-		task.launchPath = launchPath
-		task.arguments = arguments
-		
-		let pipe = Pipe()
-		task.standardOutput = pipe
-        
-		task.launch()
-        
-        if(!readOutput) {
-            return ""
+    
+    func setInformation(info: String) {
+        if(menu.items.count==0) {
+            menu.addItem(NSMenuItem(title: info, action: nil, keyEquivalent: ""))
+        } else {
+            menu.item(at: 0)?.title = info
         }
-		
-        let data = pipe.fileHandleForReading.readDataToEndOfFile()
-        guard let output = String(data: data, encoding: String.Encoding.utf8) else { return "" }
+    }
+    
+    func addItemToMenu(item: String, shortcut: String) {
+        menu.addItem(NSMenuItem(title: item, action: #selector(AppDelegate.launchSrcpy(_:)), keyEquivalent: shortcut))
+    }
+    
+    func addOptions() {
+        menu.addItem(NSMenuItem.separator())
         
-		return output
-	}
-
+        menu.addItem(NSMenuItem(title: "Refresh devices", action: #selector(AppDelegate.refreshDevices(_:)), keyEquivalent: "r"))
+        
+        menu.addItem(NSMenuItem(title: "Quit scrcpyui", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q"))
+    }
+    
+    func clearList() {
+        menu.removeAllItems()
+    }
+    
 	func applicationWillTerminate(_ aNotification: Notification) {
 		// Insert code here to tear down your application
 	}
 	
     @objc func launchSrcpy(_ sender: Any?) {
-		
         let cast = sender as! NSMenuItem
-        _ = shell(launchPath:"/bin/bash",arguments:[ "-l", "-c", "scrcpy -s \(cast.title)" ], readOutput: false)
-        print("\(cast.title)")
+        viewModel.openScrcpy(forDevice: cast.title)
 	}
     
     @objc func refreshDevices(_ sender: Any?) {
-        
-        let result = shell(launchPath:"/bin/bash",arguments:[ "-l", "-c", "adb devices" ], readOutput: true)
-        
-        let devicesList = parseDevicesFromAdbOutput(output: result)
-        
-        constructMenu(devices : devicesList)
+        viewModel.refresh()
     }
-	
-    
-    func constructMenu(devices : [String]) {
-		let menu = NSMenu()
-        menu.removeAllItems()
-        
-        if(devices.isEmpty) {
-            menu.addItem(NSMenuItem(title: "No devices detected", action: nil, keyEquivalent: ""))
-        } else {
-            var deviceNumber = 1
-            for device in devices {
-                menu.addItem(NSMenuItem(title: device, action: #selector(AppDelegate.launchSrcpy(_:)), keyEquivalent: String(deviceNumber)))
-                deviceNumber+=1
-            }
-        }
-		
-		menu.addItem(NSMenuItem.separator())
-        menu.addItem(NSMenuItem(title: "Refresh devices", action: #selector(AppDelegate.refreshDevices(_:)), keyEquivalent: "r"))
-        
-		menu.addItem(NSMenuItem(title: "Quit scrcpyui", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q"))
-		
-		statusItem.menu = menu
-	}
-
 
 }
 
