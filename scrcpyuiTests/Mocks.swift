@@ -30,7 +30,7 @@ class MockStatusBar : StatusBarProtocol {
         functionCalled[#function] = true
     }
     
-    func clearInformation() {
+    func addOptions() {
         functionCalled[#function] = true
     }
     
