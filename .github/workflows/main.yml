@@ -28,10 +28,7 @@ jobs:
     - name: Archive
       run: xcodebuild -scheme scrcpyui archive -archivePath Build/Archive
     - name: Package
-      run: hdiutil create \
-                  -fs HFS+ \
-                  -srcfolder "Build/Archive.xcarchive/Products/Applications" \
-                  -volname "scrcpy" "Build/scrcpy.dmg"
+      run: hdiutil create -fs HFS+ -srcfolder "Build/Archive.xcarchive/Products/Applications" -volname "scrcpy" "Build/scrcpy.dmg"
     - name: Create Release
       id: create_release
       uses: actions/create-release@v1
