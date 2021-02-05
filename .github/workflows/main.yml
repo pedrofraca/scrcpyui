@@ -28,7 +28,7 @@ jobs:
     - name: Archive
       run: xcodebuild -scheme scrcpyui archive -archivePath Build/Archive
     - name: Package
-      run: hdiutil create -fs HFS+ -srcfolder "Build/Archive.xcarchive/Products/Applications" -volname "scrcpy" "Build/scrcpy.dmg"
+      run: hdiutil create -fs HFS+ -srcfolder "Build/Archive.xcarchive/Products/Applications" -volname "scrcpyui" "Build/scrcpyui.dmg"
     - name: Create Release
       id: create_release
       uses: actions/create-release@v1
@@ -50,6 +50,6 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
-        asset_path: ./Build/scrcpy.dmg
-        asset_name: scrcpy.dmg
+        asset_path: ./Build/scrcpyui.dmg
+        asset_name: scrcpyui.dmg
         asset_content_type: application/x-apple-diskimage
