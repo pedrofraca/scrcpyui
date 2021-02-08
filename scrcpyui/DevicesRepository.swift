@@ -26,7 +26,7 @@ class DevicesRepository {
     }
 
     func getDevices() -> [String] {
-        let result = commandLine.execute(launchPath:"/bin/bash",arguments:[ "-l", "-c", "adb devices" ], readOutput: true)
+        let result = commandLine.execute(arguments:[ "-l", "-c", "adb devices" ], readOutput: true)
         return parseDevicesFromAdbOutput(output: result)
     }
     

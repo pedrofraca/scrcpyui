@@ -19,5 +19,5 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 import Foundation
 
 protocol CommandLine {
-    func execute(launchPath: String, arguments: [String], readOutput : Bool) -> String
+    func execute(arguments: [String], readOutput : Bool) -> String
 }

@@ -11,7 +11,7 @@
 		2176E58023324F62002C9B6F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2176E57F23324F62002C9B6F /* Assets.xcassets */; };
 		2176E58323324F62002C9B6F /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2176E58123324F62002C9B6F /* MainMenu.xib */; };
 		A7E7F4CE25C6B764008426EB /* ScrCpyViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E7F4CD25C6B764008426EB /* ScrCpyViewModelTest.swift */; };
-		A7E7F4D625C6B7A3008426EB /* ScrcpyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E7F4D525C6B7A3008426EB /* ScrcpyViewModel.swift */; };
+		A7E7F4D625C6B7A3008426EB /* ScrcpyPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E7F4D525C6B7A3008426EB /* ScrcpyPresenter.swift */; };
 		A7E7F4D825C6BA1B008426EB /* CommandLineProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E7F4D725C6BA1B008426EB /* CommandLineProtocol.swift */; };
 		A7E7F4DA25C6BAA3008426EB /* DevicesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E7F4D925C6BAA3008426EB /* DevicesRepository.swift */; };
 		A7E7F4DC25C6BB66008426EB /* DevicesRepositoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E7F4DB25C6BB66008426EB /* DevicesRepositoryTest.swift */; };
@@ -40,7 +40,7 @@
 		A7E7F4CB25C6B764008426EB /* scrcpyuiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = scrcpyuiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7E7F4CD25C6B764008426EB /* ScrCpyViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrCpyViewModelTest.swift; sourceTree = "<group>"; };
 		A7E7F4CF25C6B764008426EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A7E7F4D525C6B7A3008426EB /* ScrcpyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrcpyViewModel.swift; sourceTree = "<group>"; };
+		A7E7F4D525C6B7A3008426EB /* ScrcpyPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrcpyPresenter.swift; sourceTree = "<group>"; };
 		A7E7F4D725C6BA1B008426EB /* CommandLineProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandLineProtocol.swift; sourceTree = "<group>"; };
 		A7E7F4D925C6BAA3008426EB /* DevicesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesRepository.swift; sourceTree = "<group>"; };
 		A7E7F4DB25C6BB66008426EB /* DevicesRepositoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesRepositoryTest.swift; sourceTree = "<group>"; };
@@ -93,7 +93,7 @@
 				2176E58123324F62002C9B6F /* MainMenu.xib */,
 				2176E58423324F62002C9B6F /* Info.plist */,
 				2176E58523324F62002C9B6F /* scrcpyui.entitlements */,
-				A7E7F4D525C6B7A3008426EB /* ScrcpyViewModel.swift */,
+				A7E7F4D525C6B7A3008426EB /* ScrcpyPresenter.swift */,
 				A7E7F4D725C6BA1B008426EB /* CommandLineProtocol.swift */,
 				A7E7F4D925C6BAA3008426EB /* DevicesRepository.swift */,
 				A7E7F4DD25C6C0A5008426EB /* StatusBarProtocol.swift */,
@@ -213,7 +213,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A7E7F4D625C6B7A3008426EB /* ScrcpyViewModel.swift in Sources */,
+				A7E7F4D625C6B7A3008426EB /* ScrcpyPresenter.swift in Sources */,
 				A7E7F4DE25C6C0A5008426EB /* StatusBarProtocol.swift in Sources */,
 				A7E7F4DA25C6BAA3008426EB /* DevicesRepository.swift in Sources */,
 				A7E7F4E225C732AE008426EB /* BashCommandLine.swift in Sources */,

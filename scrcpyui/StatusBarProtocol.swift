@@ -21,6 +21,6 @@ import Foundation
 protocol StatusBarProtocol {
     func setInformation(info : String) -> Void
     func addItemToMenu(item : String, shortcut : String) -> Void
-    func addOptions() -> Void
+    func addExtraOptions() -> Void
     func clearList() -> Void
 }
