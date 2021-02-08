@@ -20,7 +20,7 @@ import Foundation
 @testable import scrcpyui
 
 class MockStatusBar : StatusBarProtocol {
-    
+      
     var functionCalled = [String: Bool]()
     
     func hasBeenCalled(function: String) -> Bool {
@@ -40,7 +40,7 @@ class MockStatusBar : StatusBarProtocol {
         functionCalled[#function] = true
     }
     
-    func addOptions() {
+    func addExtraOptions() {
         functionCalled[#function] = true
     }
     
@@ -50,21 +50,21 @@ class MockStatusBar : StatusBarProtocol {
 }
 
 class MockCommandLineScrcpy : CommandLine {
-    func execute(launchPath: String, arguments: [String], readOutput: Bool) -> String {
+    func execute(arguments: [String], readOutput: Bool) -> String {
         return ""
     }
 }
 
 //Mock version of the command line returning one entry from adb when executing adb devices
 class MockCommandLine : CommandLine {
-    func execute(launchPath: String, arguments: [String], readOutput: Bool) -> String {
+    func execute(arguments: [String], readOutput: Bool) -> String {
         return "List of devices attached\nemulator-5554\tdevice\n\n"
     }
 }
 
 //Mock version of the command line returning empty list of devices from adb when executing adb devices
 class MockCommandLineWithoutDevices : CommandLine {
-    func execute(launchPath: String, arguments: [String], readOutput: Bool) -> String {
+    func execute(arguments: [String], readOutput: Bool) -> String {
         return "List of devices attached"
     }
 }

@@ -20,9 +20,9 @@ import Foundation
 
 class BashCommandLine : CommandLine {
     
-    func execute(launchPath: String, arguments: [String], readOutput: Bool) -> String {
+    func execute(arguments: [String], readOutput: Bool) -> String {
         let task = Process()
-        task.launchPath = launchPath
+        task.launchPath = "/bin/bash"
         task.arguments = arguments
         
         let pipe = Pipe()

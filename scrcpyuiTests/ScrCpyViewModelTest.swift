@@ -26,7 +26,7 @@ class ScrCpyViewModelTest: XCTestCase {
     func testScrCpyViewModel() {
         let statusBar = MockStatusBar()
     
-        let viewModel = ScrCpyViewModel(withDevicesRepo: DevicesRepository(withCommandLine: MockCommandLine()), withCommandLine: MockCommandLine(), toStatusBar: statusBar)
+        let viewModel = ScrCpyPresenter(withDevicesRepo: DevicesRepository(withCommandLine: MockCommandLine()), withCommandLine: MockCommandLine(), toStatusBar: statusBar)
         
         viewModel.refresh()
         XCTAssertTrue(statusBar.hasBeenCalled(function: "setInformation(info:)"))

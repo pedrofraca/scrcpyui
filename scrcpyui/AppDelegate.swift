@@ -23,7 +23,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate, StatusBarPro
     
 	@IBOutlet weak var window: NSWindow!
 	let statusItem = NSStatusBar.system.statusItem(withLength:NSStatusItem.squareLength)
-    var viewModel : ScrCpyViewModel!
+    var presenter : ScrCpyPresenter!
     let menu = NSMenu()
     
 	func applicationDidFinishLaunching(_ aNotification: Notification) {
@@ -32,19 +32,19 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate, StatusBarPro
 			button.image = NSImage(named: "Image")
 			button.target = self
 		}
+        
         let commandLine = BashCommandLine()
         
-        viewModel = ScrCpyViewModel(withDevicesRepo: DevicesRepository(withCommandLine: commandLine), withCommandLine: commandLine, toStatusBar: self)
+        presenter = ScrCpyPresenter(withDevicesRepo: DevicesRepository(withCommandLine: commandLine), withCommandLine: commandLine, toStatusBar: self)
         
-        viewModel.refresh()
+        presenter.refresh()
         
         menu.delegate = self
         statusItem.menu = menu
-
 	}
     
     func menuWillOpen(_ menu: NSMenu) {
-        viewModel.refresh()
+        presenter.refresh()
     }
     
     func setInformation(info: String) {
@@ -59,11 +59,9 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate, StatusBarPro
         menu.addItem(NSMenuItem(title: item, action: #selector(AppDelegate.launchSrcpy(_:)), keyEquivalent: shortcut))
     }
     
-    func addOptions() {
+    func addExtraOptions() {
         menu.addItem(NSMenuItem.separator())
-        
         menu.addItem(NSMenuItem(title: "Refresh devices", action: #selector(AppDelegate.refreshDevices(_:)), keyEquivalent: "r"))
-        
         menu.addItem(NSMenuItem(title: "Quit scrcpyui", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q"))
     }
     
@@ -71,17 +69,13 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate, StatusBarPro
         menu.removeAllItems()
     }
     
-	func applicationWillTerminate(_ aNotification: Notification) {
-		// Insert code here to tear down your application
-	}
-	
     @objc func launchSrcpy(_ sender: Any?) {
         let cast = sender as! NSMenuItem
-        viewModel.openScrcpy(forDevice: cast.title)
+        presenter.openScrcpy(forDevice: cast.title)
 	}
     
     @objc func refreshDevices(_ sender: Any?) {
-        viewModel.refresh()
+        presenter.refresh()
     }
 
 }

@@ -19,7 +19,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 import Foundation
 
 //Constructor has to have the CommandLine integration and the adb integration
-class ScrCpyViewModel {
+class ScrCpyPresenter {
     
     var repo : DevicesRepository
     var commandLine : CommandLine
@@ -44,11 +44,11 @@ class ScrCpyViewModel {
             deviceNumber+=1
         }
         statusBar.setInformation(info: "\(devices.count) device(s) detected" )
-        statusBar.addOptions()
+        statusBar.addExtraOptions()
     }
     
     //Method that will open the scrcpy tool with the device selected by the user
     func openScrcpy(forDevice device : String) -> Void {
-        let _ = commandLine.execute(launchPath:"/bin/bash",arguments:[ "-l", "-c", "scrcpy -s \(device)" ], readOutput: false)
+        let _ = commandLine.execute(arguments:[ "-l", "-c", "scrcpy -s \(device)" ], readOutput: false)
     }
 }
