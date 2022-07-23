@@ -22,6 +22,6 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - name: Checkout Project
-      uses: actions/checkout@v1
+      uses: actions/checkout@v3
     - name: Testing
       run: xcodebuild -scheme scrcpyuiTests test
