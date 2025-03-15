@@ -17,7 +17,7 @@
 		A7E7F4DC25C6BB66008426EB /* DevicesRepositoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E7F4DB25C6BB66008426EB /* DevicesRepositoryTest.swift */; };
 		A7E7F4DE25C6C0A5008426EB /* StatusBarProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E7F4DD25C6C0A5008426EB /* StatusBarProtocol.swift */; };
 		A7E7F4E025C72653008426EB /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E7F4DF25C72653008426EB /* Mocks.swift */; };
-		A7E7F4E225C732AE008426EB /* BashCommandLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E7F4E125C732AE008426EB /* BashCommandLine.swift */; };
+		A7E7F4E225C732AE008426EB /* ShCommandLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E7F4E125C732AE008426EB /* ShCommandLine.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,7 +46,7 @@
 		A7E7F4DB25C6BB66008426EB /* DevicesRepositoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesRepositoryTest.swift; sourceTree = "<group>"; };
 		A7E7F4DD25C6C0A5008426EB /* StatusBarProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarProtocol.swift; sourceTree = "<group>"; };
 		A7E7F4DF25C72653008426EB /* Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mocks.swift; sourceTree = "<group>"; };
-		A7E7F4E125C732AE008426EB /* BashCommandLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BashCommandLine.swift; sourceTree = "<group>"; };
+		A7E7F4E125C732AE008426EB /* ShCommandLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShCommandLine.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,7 +97,7 @@
 				A7E7F4D725C6BA1B008426EB /* CommandLineProtocol.swift */,
 				A7E7F4D925C6BAA3008426EB /* DevicesRepository.swift */,
 				A7E7F4DD25C6C0A5008426EB /* StatusBarProtocol.swift */,
-				A7E7F4E125C732AE008426EB /* BashCommandLine.swift */,
+				A7E7F4E125C732AE008426EB /* ShCommandLine.swift */,
 			);
 			path = scrcpyui;
 			sourceTree = "<group>";
@@ -216,7 +216,7 @@
 				A7E7F4D625C6B7A3008426EB /* ScrcpyPresenter.swift in Sources */,
 				A7E7F4DE25C6C0A5008426EB /* StatusBarProtocol.swift in Sources */,
 				A7E7F4DA25C6BAA3008426EB /* DevicesRepository.swift in Sources */,
-				A7E7F4E225C732AE008426EB /* BashCommandLine.swift in Sources */,
+				A7E7F4E225C732AE008426EB /* ShCommandLine.swift in Sources */,
 				A7E7F4D825C6BA1B008426EB /* CommandLineProtocol.swift in Sources */,
 				2176E57E23324F60002C9B6F /* AppDelegate.swift in Sources */,
 			);
