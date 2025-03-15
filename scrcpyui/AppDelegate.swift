@@ -33,7 +33,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate, StatusBarPro
 			button.target = self
 		}
         
-        let commandLine = BashCommandLine()
+        let commandLine = ShCommandLine()
         
         presenter = ScrCpyPresenter(withDevicesRepo: DevicesRepository(withCommandLine: commandLine), withCommandLine: commandLine, toStatusBar: self)
         

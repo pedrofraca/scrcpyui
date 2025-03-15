@@ -18,11 +18,11 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 import Foundation
 
-class BashCommandLine : CommandLine {
+class ShCommandLine : CommandLine {
     
     func execute(arguments: [String], readOutput: Bool) -> String {
         let task = Process()
-        task.launchPath = "/bin/bash"
+        task.launchPath = "/bin/sh"
         task.arguments = arguments
         
         let pipe = Pipe()
