@@ -22,8 +22,22 @@ class ShCommandLine : CommandLine {
     
     func execute(arguments: [String], readOutput: Bool) -> String {
         let task = Process()
-        task.launchPath = "/bin/sh"
-        task.arguments = arguments
+        let fileManager = FileManager.default
+        let zshrcPath = ("~/.zshrc" as NSString).expandingTildeInPath
+        let defaultShell = fileManager.fileExists(atPath: zshrcPath) ? "/bin/zsh" : "/bin/bash"
+        let requestedShell = ProcessInfo.processInfo.environment["SHELL"] ?? defaultShell
+        let requestedShellName = URL(fileURLWithPath: requestedShell).lastPathComponent
+        let isSupportedShell = requestedShellName == "zsh" || requestedShellName == "bash"
+        let shellPath = isSupportedShell && fileManager.isExecutableFile(atPath: requestedShell)
+            ? requestedShell : "/bin/bash"
+        let shellConfig = URL(fileURLWithPath: shellPath).lastPathComponent == "zsh" ? ".zshrc" : ".bashrc"
+        task.launchPath = shellPath
+        var commandArguments = arguments
+
+        if arguments.count >= 3 && arguments[0] == "-l" && arguments[1] == "-c" {
+            commandArguments[2] = "if [ -r \"$HOME/\(shellConfig)\" ]; then source \"$HOME/\(shellConfig)\" >/dev/null 2>&1; fi; " + arguments[2]
+        }
+        task.arguments = commandArguments
         
         let pipe = Pipe()
         task.standardOutput = pipe

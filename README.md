@@ -8,7 +8,7 @@ Small project :to provide UI access to the [scrcpy](https://github.com/Genymobil
 ## Install
 `brew tap pedrofraca/brew; brew install scrcpyui`
 
- adb has to be accesible in the path in order to install it:
+`adb` and `scrcpy` must be available in `PATH`. Add the directories containing them to `PATH` in `~/.bashrc` or `~/.zshrc`, whichever matches your configured shell. scrcpyui loads that file before running either command.
 
  `brew install --cask android-platform-tools`
 
